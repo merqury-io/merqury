@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import useInputStyles from '../styles/useInput.module.css';
+import inputStyles from '../styles/input.module.css';
 
 const ChatBubble = () => {
 
-    const [chatBubbleText, setChatBubbleText] = useState('');
+    const [chatBubbleText, setChatBubbleText] = useState('Write your message here');
 
     const handleInputChange = (e) => {
         setChatBubbleText(e.target.value)
@@ -14,9 +14,9 @@ const ChatBubble = () => {
             <div>
                 <h1>{chatBubbleText}</h1>
             </div>
-            <div className={useInputStyles.input}>
+            <div className={inputStyles.input}>
                 <input 
-                    type="text" 
+                    type="textarea" 
                     onChange={handleInputChange}
                 />
             </div>
@@ -24,28 +24,4 @@ const ChatBubble = () => {
     )
 }
 
-export default ChatBubble
-
-
-
-
-
-// import React from 'react';
-// import UseInput from './UseInput';
-
-// import inputStyles from '../styles/useInput.module.css';
-
-// const ChatBubble = () => {
-
-//     const [chatBubbleText, setChatBubbleText] = UseInput({
-//         type: 'text'
-//     });
-
-//     return (
-//         <>
-//             {setChatBubbleText => {chatBubbleText} } 
-//         </>
-//     )
-// };
-
-// export default ChatBubble;
+export default ChatBubble;
